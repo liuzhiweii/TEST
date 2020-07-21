@@ -1,0 +1,34 @@
+// This is the CLI syntax file of a test/sample program that handles
+
+// config management
+config
+
+#ifdef CONFIG
+#include "config.cli"
+#endif
+
+// version management
+version
+#include "version.cli"
+
+
+// diagnose
+diagnose
+
+#ifdef DIAGNOSE
+#include "diagnose.cli"
+#endif
+
+// driver test
+drvtest
+#include "drvtest.cli"
+
+#ifdef DIAGNOSE
+#include "diagnose.cli"
+#endif
+
+// List all available commands with a substring 'filter' in it.
+help { <STRING:filter> }
+
+// Leave the database
+quit

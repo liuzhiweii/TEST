@@ -1,0 +1,12 @@
+Import('env')
+
+my_env = env.Clone(LIBPATH='', LIBS='')
+d = my_env.ParseFlags('-lzmq  -lpthread')
+my_env.MergeFlags(d)
+
+
+vmm = my_env.Program('vmm',Glob('source/*.c'))
+install_bin = my_env.Install('$BIN_DIR', vmm)
+
+Default([vmm, install_bin])
+

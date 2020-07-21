@@ -1,0 +1,22 @@
+
+Import('env')
+
+instep = env.Program('instep',Glob('source/instep.cc'))
+install_bin = env.Install('$BIN_DIR', instep)
+
+Default([instep, install_bin])
+
+
+'''
+Import('env')
+
+my_env = env.Clone(LIBPATH='', LIBS='')
+d = my_env.ParseFlags('-lzmq  -lpthread')
+my_env.MergeFlags(d)
+
+
+instep = my_env.Program('sync',Glob('source/*.cc'))
+install_bin = my_env.Install('$BIN_DIR', instep)
+
+Default([instep, install_bin])
+'''

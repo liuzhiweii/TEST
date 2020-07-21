@@ -1,0 +1,29 @@
+import subprocess
+import os
+
+Import('env')
+
+def Glob( pattern = '*.*', dir = '.' ):
+    import os, fnmatch
+    files = []
+    for file in os.listdir( Dir(dir).srcnode().abspath ):
+        if fnmatch.fnmatch(file, pattern) :
+            files.append( os.path.join( dir, file ) )
+    return files
+
+
+def build(target, source, env):
+	script_dir = os.path.dirname(str(source[0]))
+	print script_dir
+	subprocess.call("cp -f " + script_dir+"/*.cli .", shell=True)
+	subprocess.call("python "+ script_dir + "/mk_parser.py -D CONFIG \
+	                           main.cli -o " + script_dir+"/../source", shell=True)
+	subprocess.call("rm -f *.cli", shell=True)
+	return None
+
+env.Command('source/cparser_tree.c', ['script/main.cli', 'script/config.cli'], build)
+cli_bin = env.Program('cli', ['source/cparser_tree.c',  'source/cli.c', 'source/cli_cmd.c', 'source/cli_version_cmd.c', Glob('*.c', 'source/drvtest')])
+
+install = env.Install('$BIN_DIR',  cli_bin)
+
+Default(cli_bin, install)

@@ -1,0 +1,10 @@
+Import('env')
+
+uhf_vir_tag = env.Program('uhf_vir_tag', ['source/uhf_vir_tag.c', 'source/scp.c'])
+install_bin = env.Install('$BIN_DIR', [uhf_vir_tag])
+
+Default([uhf_vir_tag, install_bin])
+
+
+
+

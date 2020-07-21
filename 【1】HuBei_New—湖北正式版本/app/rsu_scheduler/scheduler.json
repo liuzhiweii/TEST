@@ -1,0 +1,143 @@
+{
+   "beaconid_config" : 
+   {
+      "beaconid" : "84ffff01",
+      "cycle" : 1,
+      "ifchange" : true
+   },
+   "enable_runing" : false,
+   "rfsmode" : 1,
+   "lanmode" : 3,
+   "etcmtc" : 0,
+   "parallel" : 1,
+   "psamconfig" : [
+      {
+         "enable" : true,
+         "psamid" : 1,
+         "type" : 2
+      },
+      {
+         "enable" : false,
+         "psamid" : 2,
+         "type" : 1
+      },
+      {
+         "enable" : false,
+         "psamid" : 3,
+         "type" : 1
+      },
+      {
+         "enable" : false,
+         "psamid" : 4,
+         "type" : 1
+      },
+      {
+         "enable" : false,
+         "psamid" : 5,
+         "type" : 1
+      },
+      {
+         "enable" : false,
+         "psamid" : 6,
+         "type" : 1
+      },
+      {
+         "enable" : false,
+         "psamid" : 7,
+         "type" : 1
+      },
+      {
+         "enable" : false,
+         "psamid" : 8,
+         "type" : 1
+      },
+      {
+         "enable" : false,
+         "psamid" : 9,
+         "type" : 1
+      },
+      {
+         "enable" : false,
+         "psamid" : 10,
+         "type" : 1
+      },
+      {
+         "enable" : false,
+         "psamid" : 11,
+         "type" : 1
+      },
+      {
+         "enable" : false,
+         "psamid" : 12,
+         "type" : 1
+      }
+   ],
+   "rfconfig" : [
+      {
+         "addr" : "192.168.2.201",
+         "channel" : 1,
+         "enable" : true,
+         "power" : 30,
+         "rfsn" : 1
+      },
+      {
+         "addr" : "192.168.2.202",
+         "channel" : 0,
+         "enable" : false,
+         "power" : 30,
+         "rfsn" : 2
+      },
+      {
+         "addr" : "192.168.2.203",
+         "channel" : 0,
+         "enable" : false,
+         "power" : 30,
+         "rfsn" : 3
+      },
+      {
+         "addr" : "192.168.2.204",
+         "channel" : 0,
+         "enable" : false,
+         "power" : 30,
+         "rfsn" : 4
+      },
+      {
+         "addr" : "192.168.2.205",
+         "channel" : 0,
+         "enable" : false,
+         "power" : 30,
+         "rfsn" : 5
+      }
+   ],   
+   "testmode" : true,
+   "timepara" : 
+   {
+      "bst_interval" : 20,      
+      "obu_getsecure_interval" : 20,
+      "obu_readfile_interval" : 20,
+      "obu_writefile_interval" : 20,
+      "obu_repeat_num" : 10,
+      "obu_timeout" : 3000
+   },
+   "wait_time" : 1,
+   "heart_beat" : 8,
+   "location_X1": 120,
+   "location_X2": -120,
+   "location_Y_max": 500,
+   "location_Y_min": 150,
+   "location_limit": true,
+   "location_sub_X1": 120,
+   "location_sub_X2": -120,
+   "location_sub_Y": 300,
+   "coil_trigger_antenna": false,
+   "coil_trigger_enable": false,
+   "coil_trigger_confine": 600,
+   "near_switch": 600,
+   "mid_near_switch": 500,
+   "mid_far_switch": 900,
+   "far_switch": 800,
+   "direction" : 1,
+   "vst_len" : 0,
+   "control_id": 1,
+   "control_master_ip": "192.168.2.2"
+}

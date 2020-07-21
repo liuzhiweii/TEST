@@ -1,0 +1,20 @@
+Import('env')
+
+#comm_net = env.Program('comm_net', ['source/comm_etc_net.cc', 'source/etc_codec_cq.cc'])
+#comm_uart = env.Program('comm_uart', ['source/comm_etc_uart.cc', 'source/etc_codec_cq.cc'])
+#comm_llrp = env.Program('comm_llrp', ['source/comm_llrp.cc'])
+#comm_report = env.Program('comm_report', ['source/comm_multipath_report.cc', 'source/etc_codec_ff.cc'])
+comm_multipath = env.Program('comm_multipath', ['source/comm_multipath.cc', 'source/etc_codec_ff_rsctl.cc'])
+#comm_multipath = env.Program('comm_multipath', ['source/comm_multipath.cc', 'source/etc_codec_ff_crc.cc'])
+comm_multipath_uart = env.Program('comm_multipath_uart', ['source/comm_multipath_uart.cc', 'source/etc_codec_ff_rsctl.cc'])
+#comm_multipath_uart = env.Program('comm_multipath_uart', ['source/comm_multipath_uart.cc', 'source/etc_codec_ff_crc.cc'])
+#comm_multipath = env.Program('comm_multipath', ['source/comm_multipath.cc', 'source/etc_codec_ff_crc.cc'])
+#comm_client = env.Program('comm_client', ['source/comm_multipath_client.cc', 'source/etc_codec_ff.cc'])
+#install_bin = env.Install('$BIN_DIR', [comm_multipath, comm_client, comm_report])
+install_bin = env.Install('$BIN_DIR', [comm_multipath, comm_multipath_uart])
+
+Default([comm_multipath, install_bin])
+
+
+
+

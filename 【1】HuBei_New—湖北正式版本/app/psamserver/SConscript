@@ -1,0 +1,10 @@
+Import('env')
+
+psamserver = env.Program('psamserver', ['source/psammain.cc', 'source/psamserver.cc'])
+install_bin = env.Install('$BIN_DIR', [psamserver])
+
+Default([psamserver, install_bin])
+
+
+
+

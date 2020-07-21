@@ -1,0 +1,10 @@
+Import('env')
+
+systime_update = env.Program('systime_update', ['source/systime_update.c'])
+install_bin = env.Install('$BIN_DIR', [systime_update])
+
+Default([systime_update,  install_bin])
+
+
+
+

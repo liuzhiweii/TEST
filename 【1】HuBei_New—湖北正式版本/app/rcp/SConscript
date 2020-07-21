@@ -1,0 +1,16 @@
+Import('env')
+def Glob( pattern = '*.*', dir = '.' ):
+    import os, fnmatch
+    files = []
+    for file in os.listdir( Dir(dir).srcnode().abspath ):
+        if fnmatch.fnmatch(file, pattern) :
+            files.append( os.path.join( dir, file ) )
+    return files
+
+rcp = env.Program('rcp', [Glob('*.c', 'source')])
+install_bin = env.Install('$BIN_DIR', rcp)
+
+Default([rcp, install_bin])
+
+
+

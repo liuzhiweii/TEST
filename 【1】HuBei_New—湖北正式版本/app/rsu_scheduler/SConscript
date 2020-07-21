@@ -1,0 +1,10 @@
+Import('env')
+
+scheduler = env.Program('scheduler', ['source/scheduler.cc'])
+install_bin = env.Install('$BIN_DIR', [scheduler, 'scheduler.json'])
+
+Default([scheduler,  install_bin])
+
+
+
+

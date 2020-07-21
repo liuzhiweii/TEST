@@ -1,0 +1,19 @@
+Import('env')
+
+def Glob( pattern = '*.*', dir = '.' ):
+    import os, fnmatch
+    files = []
+    for file in os.listdir( Dir(dir).srcnode().abspath ):
+        if fnmatch.fnmatch(file, pattern) :
+            files.append( os.path.join( dir, file ) )
+    return files
+
+
+
+my_env = env.Clone(LIBPATH='', LIBS='')
+d = my_env.ParseFlags('-lzmq -ljsonmt -lstdc++ -lpthread -levent')
+my_env.MergeFlags(d)
+
+bsps = my_env.SharedLibrary('libbsp', [Glob('*.c', 'source')])
+my_env.Install('$LIB_DIR', bsps)
+
