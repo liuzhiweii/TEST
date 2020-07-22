@@ -1,6 +1,0 @@
-Import('env')
-
-
-utimer = env.Program('utimer', ['source/timer.cc'])
-install_bin = env.Install('$BIN_DIR', utimer)
-Default([utimer, install_bin])

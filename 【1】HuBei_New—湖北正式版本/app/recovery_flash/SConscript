@@ -1,7 +1,0 @@
-Import('env')
-
-
-recovery_flash = env.Program('recovery_flash', Glob('source/*.cc'))
-install_bin = env.Install('$BIN_DIR', recovery_flash)
-
-Default([recovery_flash, install_bin])

@@ -1,9 +1,0 @@
-Import('env')
-
-my_env = env.Clone(LIBPATH='', LIBS='')
-
-ipsearch = my_env.Program('ipsearch',Glob('source/*.c'))
-install_bin = my_env.Install('$BIN_DIR', ipsearch)
-
-Default([ipsearch, install_bin])
-

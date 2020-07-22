@@ -1,8 +1,0 @@
-
-Import('env')
-
-device_proxy = env.Program('device_proxy', ['source/device_proxy.cc'])
-install_bin = env.Install('$BIN_DIR', device_proxy)
-
-Default([device_proxy, install_bin])
-

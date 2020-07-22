@@ -1,6 +1,0 @@
-Import('env')
-
-cmm = env.Program('cmm', ['source/cmm.c'])
-install_bin = env.Install('$BIN_DIR', cmm)
-
-Default([cmm, install_bin])

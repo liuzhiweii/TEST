@@ -1,7 +1,0 @@
-Import('env')
-
-env.Append(CCFLAGS=['-DCFG_ETC'])
-cfg = env.Program('cfg', Glob('source/*.c'))
-install_bin = env.Install('$BIN_DIR', cfg)
-
-Default([cfg, install_bin])

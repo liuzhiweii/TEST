@@ -1,9 +1,0 @@
-Import('env')
-
-logm = env.Program('logm', 'source/logm.cc')
-#testlogm = env.Program('testlogm', 'source/test_logm.cc')
-#testfast = env.Program('testfast', 'source/test_logm_fast.cc')
-install_bin = env.Install('$BIN_DIR', logm)
-
-Default([logm, install_bin])
-

@@ -1,5 +1,0 @@
-Import('env')
-
-rfs = env.Program('rfs', ['source/rfs.c'])
-install_bin = env.Install('$BIN_DIR', [rfs])
-Default([rfs,  install_bin])
